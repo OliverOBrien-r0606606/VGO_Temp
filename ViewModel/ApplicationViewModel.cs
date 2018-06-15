@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
+
 namespace ViewModel
 {
     public class ApplicationViewModel: ObservableObject
@@ -56,7 +57,9 @@ namespace ViewModel
         {
             Debug.WriteLine("NewGame from AppVM");
             Board = new BoardViewModel(Menu.GameInformation);
-            CurrentWorkSpace = Board; 
+            CurrentWorkSpace = Board;
+            Prefs.PlayerBlack =  Menu.PlayerOne.Color.Value;
+            Prefs.PlayerWhite = Menu.PlayerTwo.Color.Value;
         }
     }
 

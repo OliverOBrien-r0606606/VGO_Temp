@@ -53,6 +53,8 @@
                       ItemsSource="{Binding Path=DimentionOptions}"
                       SelectedValuePath="{Binding Path=DimentionOptions}"
                       DisplayMemberPath="{Binding Path=DimentionOptions}">
+
+
             </ComboBox>
             <TextBlock TextAlignment="Center"
                        Grid.Column="1"

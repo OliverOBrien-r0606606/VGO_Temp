@@ -39,12 +39,12 @@ namespace View.Views
             if (Owner == Player.WHITE)
             {
                 Debug.WriteLine("W");
-                return "White" ;
+                return new SolidColorBrush(Prefs.PlayerWhite);
             }
             else if (Owner == Player.BLACK)
             {
                 Debug.WriteLine("B");
-                return "Black";
+                return new SolidColorBrush(Prefs.PlayerBlack);
             }
             else
             {
@@ -66,6 +66,21 @@ namespace View.Views
 
             if (CurrentPlayer == Player.BLACK) return "Black";
             return "White";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class HexStringToColorConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if(value!=null)
+                return new SolidColorBrush((Color)value);
+            return "Transparent";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

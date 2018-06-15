@@ -10,7 +10,7 @@
     <UserControl.Resources>
         <local:OwnerConverter x:Key="OwnerConverter"/>
         <local:CurrentPlayerConverter x:Key="CurrentPlayerConverter"/>
-
+        <local:HexStringToColorConverter x:Key="HexStringToColorConverter"/>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
